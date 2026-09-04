@@ -44,12 +44,21 @@ body {
   margin-bottom: 16px;
 }
 
-.draft-heading {
-  font-size: 1.3rem;
-  color: var(--blue-dark);
+.draft-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
   border-bottom: 3px solid var(--blue);
   padding-bottom: 8px;
   margin: 0 0 20px;
+}
+
+.draft-heading {
+  font-size: 1.3rem;
+  color: var(--blue-dark);
+  margin: 0;
 }
 
 .draft-divider {
@@ -166,9 +175,14 @@ main {
 
 .board-side {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
-  min-width: 160px;
+}
+
+.board-side .btn {
+  padding: 8px 14px;
+  font-size: 0.9rem;
 }
 
 .btn {

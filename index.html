@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mリーグ ドラフト会議</title>
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -21,7 +21,14 @@
 <main>
 
 <section class="draft-block" id="player-draft-block">
-  <h2 class="draft-heading">選手ドラフト</h2>
+  <div class="draft-heading-row">
+    <h2 class="draft-heading">選手ドラフト</h2>
+    <div class="board-side">
+      <button id="player-reveal-btn" class="btn btn-primary" disabled>指名結果発表</button>
+      <button id="player-lottery-btn" class="btn btn-danger" hidden>抽選を行う</button>
+      <button id="player-next-round-btn" class="btn btn-primary" hidden>次の巡へ進む</button>
+    </div>
+  </div>
   <div id="player-status-banner" class="status-banner" hidden></div>
 
   <p class="scroll-hint">← 横にスクロールできます →</p>
@@ -39,11 +46,6 @@
         </thead>
         <tbody id="player-board-body"></tbody>
       </table>
-    </div>
-    <div class="board-side">
-      <button id="player-reveal-btn" class="btn btn-primary" disabled>指名結果発表</button>
-      <button id="player-lottery-btn" class="btn btn-danger" hidden>抽選を行う</button>
-      <button id="player-next-round-btn" class="btn btn-primary" hidden>次の巡へ進む</button>
     </div>
   </div>
 
@@ -73,7 +75,14 @@
 <hr class="draft-divider">
 
 <section class="draft-block" id="team-draft-block">
-  <h2 class="draft-heading">チームドラフト</h2>
+  <div class="draft-heading-row">
+    <h2 class="draft-heading">チームドラフト</h2>
+    <div class="board-side">
+      <button id="team-reveal-btn" class="btn btn-primary" disabled>指名結果発表</button>
+      <button id="team-lottery-btn" class="btn btn-danger" hidden>抽選を行う</button>
+      <button id="team-next-round-btn" class="btn btn-primary" hidden>結果を確定する</button>
+    </div>
+  </div>
   <div id="team-status-banner" class="status-banner" hidden></div>
 
   <p class="scroll-hint">← 横にスクロールできます →</p>
@@ -91,11 +100,6 @@
         </thead>
         <tbody id="team-board-body"></tbody>
       </table>
-    </div>
-    <div class="board-side">
-      <button id="team-reveal-btn" class="btn btn-primary" disabled>指名結果発表</button>
-      <button id="team-lottery-btn" class="btn btn-danger" hidden>抽選を行う</button>
-      <button id="team-next-round-btn" class="btn btn-primary" hidden>結果を確定する</button>
     </div>
   </div>
 
@@ -136,9 +140,9 @@
 
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
-<script src="firebase-config.js?v=8"></script>
-<script src="players_data.js?v=8"></script>
-<script src="teams_data.js?v=8"></script>
-<script src="app.js?v=8"></script>
+<script src="firebase-config.js?v=9"></script>
+<script src="players_data.js?v=9"></script>
+<script src="teams_data.js?v=9"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>
