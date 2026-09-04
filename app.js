@@ -129,7 +129,7 @@ function renderBoard(state) {
 
       const confirmedId = state.results[p][r - 1];
       if (confirmedId) {
-        td.textContent = playerLabel(confirmedId);
+        td.innerHTML = playerCellHTML(confirmedId);
         td.className = "cell-player";
       } else if (r < state.round) {
         td.textContent = "";
@@ -141,7 +141,7 @@ function renderBoard(state) {
         // current round, not yet confirmed for this participant
         const isConflict = state.conflicts.some(c => c.participants.includes(p));
         if (state.revealed && !revealAnimating && state.bids[p] && !confirmedId) {
-          td.textContent = isConflict ? `${playerLabel(state.bids[p])}（重複）` : playerLabel(state.bids[p]);
+          td.innerHTML = playerCellHTML(state.bids[p], isConflict);
           td.className = isConflict ? "cell-conflict" : "cell-player";
         } else if (state.pendingParticipants.includes(p)) {
           td.textContent = "指名前";
@@ -161,6 +161,13 @@ function playerLabel(id) {
   const pl = PLAYERS_BY_ID[id];
   if (!pl) return "?";
   return `${pl.name}（${pl.team}）`;
+}
+
+function playerCellHTML(id, isConflict) {
+  const pl = PLAYERS_BY_ID[id];
+  if (!pl) return "?";
+  const suffix = isConflict ? "（重複）" : "";
+  return `<div class="player-name">${pl.name}${suffix}</div><div class="player-team">${pl.team}</div>`;
 }
 
 function renderControls(state) {
@@ -432,7 +439,7 @@ function runRevealAnimation(state, onDone) {
       const td = boardBody.querySelector(`td[data-round="${state.round}"][data-participant="${p}"]`);
       if (td) {
         const isConflict = state.conflicts.some(c => c.participants.includes(p));
-        td.textContent = isConflict ? `${playerLabel(state.bids[p])}（重複）` : playerLabel(state.bids[p]);
+        td.innerHTML = playerCellHTML(state.bids[p], isConflict);
         td.className = isConflict ? "cell-conflict" : "cell-player";
       }
     }, i * REVEAL_STEP_MS);

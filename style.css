@@ -103,6 +103,9 @@ main {
   background: var(--lavender-dark);
 }
 
+.player-name { font-weight: bold; }
+.player-team { font-size: 0.8em; color: #555; font-weight: normal; }
+
 .cell-pending { color: #888; }
 .cell-done { color: #2b4380; font-weight: bold; }
 .cell-player {
