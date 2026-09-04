@@ -222,6 +222,10 @@ main {
   z-index: 100;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .modal-box {
   background: white;
   border-radius: 10px;
