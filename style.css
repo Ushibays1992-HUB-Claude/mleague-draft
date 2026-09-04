@@ -66,6 +66,7 @@ main {
 
 .board-table {
   border-collapse: collapse;
+  table-layout: fixed;
   flex: 1;
   min-width: 600px;
   background: white;
@@ -76,6 +77,17 @@ main {
   padding: 10px 12px;
   text-align: center;
   font-size: 0.95rem;
+  overflow-wrap: break-word;
+}
+
+.board-table thead th:first-child,
+.board-table tbody th {
+  width: 160px;
+}
+
+.board-table thead th:not(:first-child),
+.board-table tbody td {
+  width: calc((100% - 160px) / 5);
 }
 
 .board-table thead th {
