@@ -106,10 +106,14 @@ function createDraftController(config) {
     };
   }
 
+  function displayName(it) {
+    return it.tag ? `${it.name}（${it.tag}）` : it.name;
+  }
+
   function itemLabel(id) {
     const it = itemsById[id];
     if (!it) return "?";
-    return it.sub ? `${it.name}（${it.sub}）` : it.name;
+    return it.sub ? `${displayName(it)}（${it.sub}）` : displayName(it);
   }
 
   function itemCellHTML(id, isConflict) {
@@ -117,9 +121,9 @@ function createDraftController(config) {
     if (!it) return "?";
     const suffix = isConflict ? "（重複）" : "";
     if (it.sub) {
-      return `<div class="player-name">${it.name}${suffix}</div><div class="player-team">${it.sub}</div>`;
+      return `<div class="player-name">${displayName(it)}${suffix}</div><div class="player-team">${it.sub}</div>`;
     }
-    return `<div class="player-name">${it.name}${suffix}</div>`;
+    return `<div class="player-name">${displayName(it)}${suffix}</div>`;
   }
 
   let latestState = null;
@@ -258,7 +262,7 @@ function createDraftController(config) {
         groups[key].forEach(it => {
           const opt = document.createElement("option");
           opt.value = it.id;
-          opt.textContent = it.name;
+          opt.textContent = displayName(it);
           group.appendChild(opt);
         });
         dom.itemSelect.appendChild(group);
@@ -267,7 +271,7 @@ function createDraftController(config) {
       (groups.__flat__ || []).forEach(it => {
         const opt = document.createElement("option");
         opt.value = it.id;
-        opt.textContent = it.name;
+        opt.textContent = displayName(it);
         dom.itemSelect.appendChild(opt);
       });
     }
@@ -458,7 +462,7 @@ function createDraftController(config) {
     const itemId = dom.itemSelect.value;
     if (!itemId) return;
     const it = itemsById[itemId];
-    showConfirm(`${it.name}の指名で確定させますか？入力後の変更はできません。`, async () => {
+    showConfirm(`${displayName(it)}の指名で確定させますか？入力後の変更はできません。`, async () => {
       await db.runTransaction(async tx => {
         const snap = await tx.get(stateRef);
         const state = snap.data();
@@ -495,7 +499,7 @@ createDraftController({
   collectionName: "draft",
   docId: "state",
   prefix: "player",
-  items: window.PLAYERS_DATA.map(p => ({ id: p.id, name: p.name, sub: p.team })),
+  items: window.PLAYERS_DATA.map(p => ({ id: p.id, name: p.name, sub: p.team, tag: p.tag })),
   maxRounds: 4,
   roundLabel: r => `${r}巡選択指名選手`,
 });

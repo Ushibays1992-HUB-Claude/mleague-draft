@@ -10,19 +10,22 @@ window.PLAYERS_DATA = [
     "id": "p02",
     "name": "三浦 智博",
     "team": "EARTH JETS",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "-"
   },
   {
     "id": "p03",
     "name": "逢川 恵夢",
     "team": "EARTH JETS",
-    "gender": "女性"
+    "gender": "女性",
+    "tag": "-"
   },
   {
     "id": "p04",
     "name": "HIRO 柴田",
     "team": "EARTH JETS",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "-"
   },
   {
     "id": "p05",
@@ -34,13 +37,15 @@ window.PLAYERS_DATA = [
     "id": "p06",
     "name": "鈴木 たろう",
     "team": "赤坂ドリブンズ",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "-"
   },
   {
     "id": "p07",
     "name": "浅見 真紀",
     "team": "赤坂ドリブンズ",
-    "gender": "女性"
+    "gender": "女性",
+    "tag": "-"
   },
   {
     "id": "p08",
@@ -58,7 +63,8 @@ window.PLAYERS_DATA = [
     "id": "p10",
     "name": "勝又 健志",
     "team": "EX風林火山",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "-"
   },
   {
     "id": "p11",
@@ -76,25 +82,29 @@ window.PLAYERS_DATA = [
     "id": "p13",
     "name": "岡田 紗佳",
     "team": "KADOKAWAサクラナイツ",
-    "gender": "女性"
+    "gender": "女性",
+    "tag": "-"
   },
   {
     "id": "p14",
     "name": "堀 慎吾",
     "team": "KADOKAWAサクラナイツ",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "-"
   },
   {
     "id": "p15",
     "name": "阿久津 翔太",
     "team": "KADOKAWAサクラナイツ",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "-"
   },
   {
     "id": "p16",
     "name": "尻無濱 航",
     "team": "KADOKAWAサクラナイツ",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "新"
   },
   {
     "id": "p17",
@@ -136,19 +146,22 @@ window.PLAYERS_DATA = [
     "id": "p23",
     "name": "松本 吉弘",
     "team": "渋谷ABEMAS",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "-"
   },
   {
     "id": "p24",
     "name": "日向 藍子",
     "team": "渋谷ABEMAS",
-    "gender": "女性"
+    "gender": "女性",
+    "tag": "-"
   },
   {
     "id": "p25",
     "name": "茅森 早香",
     "team": "セガサミーフェニックス",
-    "gender": "女性"
+    "gender": "女性",
+    "tag": "-"
   },
   {
     "id": "p26",
@@ -166,19 +179,22 @@ window.PLAYERS_DATA = [
     "id": "p28",
     "name": "佐野 ひなこ",
     "team": "セガサミーフェニックス",
-    "gender": "女性"
+    "gender": "女性",
+    "tag": "新"
   },
   {
     "id": "p29",
     "name": "萩原 聖人",
     "team": "TEAM RAIDEN",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "-"
   },
   {
     "id": "p30",
     "name": "瀬戸熊 直樹",
     "team": "TEAM RAIDEN",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "-"
   },
   {
     "id": "p31",
@@ -190,13 +206,15 @@ window.PLAYERS_DATA = [
     "id": "p32",
     "name": "本田 朋広",
     "team": "TEAM RAIDEN",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "-"
   },
   {
     "id": "p33",
     "name": "鈴木 大介",
     "team": "BEAST X",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "-"
   },
   {
     "id": "p34",
@@ -220,7 +238,8 @@ window.PLAYERS_DATA = [
     "id": "p37",
     "name": "瑞原 明奈",
     "team": "U-NEXT Pirates",
-    "gender": "女性"
+    "gender": "女性",
+    "tag": "-"
   },
   {
     "id": "p38",
@@ -232,12 +251,14 @@ window.PLAYERS_DATA = [
     "id": "p39",
     "name": "仲林 圭",
     "team": "U-NEXT Pirates",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "-"
   },
   {
     "id": "p40",
     "name": "朝倉 康心",
     "team": "U-NEXT Pirates",
-    "gender": "男性"
+    "gender": "男性",
+    "tag": "新"
   }
 ];
