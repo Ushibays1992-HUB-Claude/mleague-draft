@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mリーグ ドラフト会議</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="app-header">
+  <h1>Mリーグ ドラフト会議</h1>
+  <div id="identity-bar" class="identity-bar">
+    <span>あなた: </span>
+    <select id="identity-select">
+      <option value="">選択してください</option>
+    </select>
+  </div>
+</header>
+
+<main>
+  <section id="status-banner" class="status-banner" hidden></section>
+
+  <section class="board-wrap">
+    <table id="board-table" class="board-table">
+      <thead>
+        <tr id="board-header-row">
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="board-body"></tbody>
+    </table>
+    <div class="board-side">
+      <button id="reveal-btn" class="btn btn-primary" disabled>指名結果発表</button>
+      <button id="lottery-btn" class="btn btn-danger" hidden>抽選を行う</button>
+      <button id="next-round-btn" class="btn btn-primary" hidden>次の巡へ進む</button>
+    </div>
+  </section>
+
+  <section id="pick-panel" class="pick-panel" hidden>
+    <h2>あなたの指名選手を選んでください（第<span id="pick-round-num"></span>巡）</h2>
+    <select id="player-select"></select>
+    <button id="pick-btn" class="btn btn-primary">指名する</button>
+  </section>
+
+  <section id="wait-panel" class="wait-panel" hidden>
+    <p id="wait-message"></p>
+  </section>
+
+  <section id="lottery-panel" class="lottery-panel" hidden>
+    <h2>抽選中...</h2>
+    <div id="lottery-anim"></div>
+  </section>
+
+  <section id="results-panel" class="results-panel" hidden>
+    <h2>ドラフト結果</h2>
+    <div id="results-grid"></div>
+  </section>
+</main>
+
+<footer class="app-footer">
+  <button id="reset-btn" class="btn btn-link">ドラフトをリセットする</button>
+</footer>
+
+<div id="confirm-modal" class="modal-overlay" hidden>
+  <div class="modal-box">
+    <p id="confirm-message"></p>
+    <div class="modal-actions">
+      <button id="confirm-yes" class="btn btn-primary">YES</button>
+      <button id="confirm-no" class="btn btn-secondary">NO</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="players_data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
