@@ -40,6 +40,24 @@ body {
   border: none;
 }
 
+.draft-block {
+  margin-bottom: 16px;
+}
+
+.draft-heading {
+  font-size: 1.3rem;
+  color: var(--blue-dark);
+  border-bottom: 3px solid var(--blue);
+  padding-bottom: 8px;
+  margin: 0 0 20px;
+}
+
+.draft-divider {
+  border: none;
+  border-top: 2px dashed #ccc;
+  margin: 48px 0;
+}
+
 main {
   max-width: 1100px;
   margin: 24px auto;
